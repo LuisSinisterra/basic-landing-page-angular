@@ -1,0 +1,9 @@
+<ng-container *ngIf="!loading">
+    <p>El nombre es: {{ product?.name }}</p>
+    <p>El precio es: {{ product?.price | currency }}</p>
+    <p *ngIf="product?.description">El Descripcion es: {{ product?.description }}</p>
+</ng-container>
+
+<ng-container *ngIf="loading">
+    <i>Cargando informacion...</i>
+</ng-container>

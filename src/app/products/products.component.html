@@ -1,0 +1,23 @@
+<div class="container">
+    <br>
+    <h2>Productos</h2>
+    <br>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Producto</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Detalle</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of productsList">
+            <th scope="row">{{ product.id }}</th>
+            <td>{{ product.name }}</td>
+            <td [ngClass]="{'color-class': product.price <= 5}">{{ product.price | currency}}</td>
+            <td><button class="btn btn-outline-primary" [routerLink]="['/products', product.id]">Detalle</button></td>
+          </tr>
+        </tbody>
+      </table>
+</div>
